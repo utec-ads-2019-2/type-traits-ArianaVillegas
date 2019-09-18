@@ -5,9 +5,12 @@ template <typename T>
 struct Node {
     T data;
     Node<T>* next;
+    Node<T>* prev;
+    int rep;
       
-    Node(T data) : data(data) {
+    Node(T data) : data(data), rep(0) {
         next = nullptr;
+        prev = nullptr;
     }
       
     void killSelf();
@@ -18,7 +21,6 @@ void Node<T>::killSelf() {
     if (next) {
         next->killSelf();
     }
-    
     delete this;
 }
 
