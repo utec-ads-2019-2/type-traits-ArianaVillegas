@@ -56,6 +56,8 @@ class SelfList {
                 if(method==Count) ++(node->rep);
                 return true;
             }
+
+            // Recomendación: Podrías haber sacado un find, y tener los métodos separados como privados
             node=node->next;
             while(node){
                 if(node->data==data) {
@@ -95,6 +97,7 @@ class SelfList {
         }
 
         T operator [] (int index) {
+            // Si el índice se pasa? o si la lista está vacía? O si es negativo?
             Node<T>* node=head;
             for(int i=0; i<index; ++i){
                 node=node->next;

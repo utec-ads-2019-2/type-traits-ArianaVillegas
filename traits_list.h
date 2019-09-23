@@ -20,6 +20,7 @@ class TraitsList {
                         return true;
                     }
                 } else {
+                    // Esto podrías controlarlo en el mismo while y ahorrar unas líneas
                     return false;
                 }
                 pointer=&((*pointer)->next);
